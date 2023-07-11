@@ -1,0 +1,24 @@
+version: '3.9'
+
+networks:
+  development_net:
+
+services:
+
+  web:
+    container_name: nginx-laravel10
+    build: .
+    volumes:
+      - ./config/certs:/etc/nginx/certs
+      - ./config/web/log:/var/log/nginx
+      - ./config/web/nginx/sites-enabled:/etc/nginx/sites-enabled
+      - ./config/web/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./src:/var/www/dev.org
+    # entrypoint: [ "/bin/sh", "-c", "chmod +x /opt/src/scripts/initial.sh && sh /opt/src/scripts/initial.sh"]
+    # command: /bin/sh -c /opt/src/scripts/initial.sh
+    ports:
+      - "${APP_PORT}:80"
+      - "${APP_TLS_PORT}:443"
+    networks:
+      - development_net
+
