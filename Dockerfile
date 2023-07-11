@@ -27,4 +27,14 @@ RUN chmod -R 777 /var/log/
 
 WORKDIR /var/www/dev.org
 
+RUN nginx -t
+RUN service php8.2-fpm start
+RUN service nginx start
+
+RUN chown -R www-data:www-data /var/www/dev.org
+
+EXPOSE 80 443
+
 RUN /bin/sh -c /opt/src/scripts/initial.sh
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
