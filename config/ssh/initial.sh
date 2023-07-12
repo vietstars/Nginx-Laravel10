@@ -1,6 +1,6 @@
 echo "**** Configure source ****"
 
-cp .evn.example .evn
+cp .env.example .env
 composer install
 npm install
 
