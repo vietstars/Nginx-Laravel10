@@ -1,4 +1,17 @@
-FROM dec24th82/laravel:10.14
+FROM dec24th82/complex:debian12-nginx1.22-php8.2-node18.13-laravel10
+
+RUN apt-get update -y
+
+RUN apt-get install -y vim supervisor nginx curl dirmngr unzip gnupg2 ca-certificates wget ufw
+RUN apt-get install -y software-properties-common apt-transport-https lsb-release debian-archive-keyring
+RUN apt-get install -y php-fpm php-cli php-mysql php-mbstring php-xml php-gd php-xdebug
+RUN apt-get install -y php-ctype php-curl php-dom php-exif php-fileinfo php-iconv php-intl
+RUN apt-get install -y php-mysqli php-opcache php-phar php-simplexml php-soap php-xml
+RUN apt-get install -y php-xmlreader php-zip php-pdo php-xmlwriter php-tokenizer
+RUN apt-get install -y nodejs npm
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # Configure certs
 COPY ./config/certs /etc/nginx/certs
