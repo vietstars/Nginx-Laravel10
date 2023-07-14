@@ -16,4 +16,8 @@ php artisan vendor:publish \
 
 composer require vietstars/dev-debugger
 
+php artisan vendor:publish --provider=”Laravel\Sanctum\SanctumServiceProvider”
+
+php artisan migrate:fresh --seed
+
 npm install
