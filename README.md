@@ -28,7 +28,11 @@ composer require vietstars/dev-debugger
 php artisan vendor:publish --provider=”Laravel\Sanctum\SanctumServiceProvider”
 ```
 ## Enable middleware
-EnsureFrontendRequestsAreStateful in Kernel.php
+```php
+# http\Kernel.php
+# api
+\Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+```
 
 ## Add api token to user model
 ```php
