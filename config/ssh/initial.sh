@@ -1,8 +1,8 @@
 echo "**** Configure source ****"
 
-cp .env.example .env
-
 composer install
+composer post-root-package-install
+composer post-create-project-cmd
 
 composer require vietstars/code-style
 php artisan vendor:publish \
