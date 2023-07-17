@@ -1,5 +1,20 @@
 echo "**** Configure source ****"
 
+nginx -t
+
+service php8.2-fpm start
+service nginx start
+
+service php8.2-fpm start
+service nginx start
+
+rm -rf source
+git clone -b resource https://github.com/vietstars/Nginx-Laravel10.git source
+cp -r ./source/. .
+rm -rf source
+
+#cp .env.example .env
+
 composer install
 composer post-root-package-install
 composer post-create-project-cmd
