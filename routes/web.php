@@ -21,6 +21,6 @@ Route::get('/', [HomeController::class, 'welcome']);
 
 Route::get('logs', [LogsViewerController::class, 'index']);
 
-Route::get('s', function () {
+Route::get('myadmin', function () {
   return redirect()->to('http://dev.org:8080');
 });
