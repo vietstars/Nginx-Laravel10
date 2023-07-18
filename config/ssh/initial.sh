@@ -13,7 +13,7 @@ git clone -b resource https://github.com/vietstars/Nginx-Laravel10.git source
 cp -r ./source/. .
 rm -rf source
 
-#cp .env.example .env
+cp .env.example .env
 
 composer install
 composer post-root-package-install
@@ -37,3 +37,4 @@ php artisan migrate:fresh --seed
 
 npm update
 npm run dev
+exit;
