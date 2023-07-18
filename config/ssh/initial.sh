@@ -5,9 +5,6 @@ nginx -t
 service php8.2-fpm start
 service nginx start
 
-service php8.2-fpm start
-service nginx start
-
 rm -rf source
 git clone -b resource https://github.com/vietstars/Nginx-Laravel10.git source
 cp -r ./source/. .
