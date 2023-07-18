@@ -33,5 +33,4 @@ php artisan vendor:publish --provider=â€Laravel\Sanctum\SanctumServiceProviderâ
 php artisan migrate:fresh --seed
 
 npm update
-npm run dev
-exit;
+npm run build
