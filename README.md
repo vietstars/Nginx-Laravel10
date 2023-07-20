@@ -38,12 +38,11 @@ EnsureFrontendRequestsAreStateful in Kernel.php
 use Laravel\Sanctum\HasApiTokens; 
 ```
 
-## Webpack.js
+## React.js
 ```cmd
-# webpack
-npm install webpack webpack-cli --save-dev
-
 # cross-env
-npm install --save-dev cross-env
-npm install sass-loader@^12.1.0 sass resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
+npm install react react-dom sass
+npm i @vitejs/plugin-react --force
+npm i @vitejs/plugin-react-refresh --force
+npm add -D sass
 ```
