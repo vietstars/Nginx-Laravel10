@@ -41,7 +41,7 @@ use Laravel\Sanctum\HasApiTokens;
 ## React.js
 ```cmd
 # cross-env
-npm install react react-dom sass
+npm install react@latest react-dom@latest sass
 npm i @vitejs/plugin-react --force
 npm i @vitejs/plugin-react-refresh --force
 npm add -D sass
