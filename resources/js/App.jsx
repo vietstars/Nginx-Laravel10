@@ -1,9 +1,9 @@
 import React from 'react';
 import { 
   createRoot 
-} from 'react-dom/client'
+} from 'react-dom/client';
 
-export default function App(){
+export default function App() {
   return(
     <h1 className="dark:text-white">
       How To Install React in Laravel 10 with Vite
@@ -11,6 +11,10 @@ export default function App(){
   );
 }
 
-if(document.getElementById('root')){
-  createRoot(document.getElementById('root')).render(<App />)
-}
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
