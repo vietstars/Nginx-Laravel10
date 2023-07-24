@@ -17,7 +17,6 @@ use App\Http\Controllers\Client\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'initApp']);
 Route::get('/welcome', [HomeController::class, 'welcome']);
 
 Route::get('logs', [LogsViewerController::class, 'index']);
@@ -25,3 +24,5 @@ Route::get('logs', [LogsViewerController::class, 'index']);
 Route::get('myadmin', function () {
   return redirect()->to('http://dev.org:8080');
 });
+
+Route::get('/', [HomeController::class, 'initApp']);
