@@ -17,7 +17,8 @@ use App\Http\Controllers\Client\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'welcome']);
+Route::get('/', [HomeController::class, 'initApp']);
+Route::get('/welcome', [HomeController::class, 'welcome']);
 
 Route::get('logs', [LogsViewerController::class, 'index']);
 
