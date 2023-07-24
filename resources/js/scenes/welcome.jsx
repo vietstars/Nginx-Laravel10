@@ -104,7 +104,7 @@ const App = () => {
           </div>
 
           <div className="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-              Laravel v10.14 (PHP v8.2)
+              Laravel v10.15 (PHP v8.2.7)
           </div>
         </div>
       </div>
