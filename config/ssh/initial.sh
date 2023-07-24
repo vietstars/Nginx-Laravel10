@@ -22,9 +22,9 @@ php artisan vendor:publish \
   --force
 
 composer require vietstars/logs-viewer
-php artisan vendor:publish \
-  --provider="Vietstars\LogsViewer\LogsViewerServiceProvider" \
-  --tag=views
+# php artisan vendor:publish \
+#   --provider="Vietstars\LogsViewer\LogsViewerServiceProvider" \
+#   --tag=views
 
 composer require vietstars/dev-debugger
 
