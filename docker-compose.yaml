@@ -16,7 +16,7 @@ services:
       - ./config/web/nginx/sites-enabled:/etc/nginx/sites-enabled
       - ./config/web/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./src:/var/www/dev.org
-    entrypoint: [ "/bin/sh", "-c", "chmod +x /opt/src/scripts/initial.sh && sh /opt/src/scripts/initial.sh"]
+    # entrypoint: [ "/bin/sh", "-c", "chmod +x /opt/src/scripts/initial.sh && sh /opt/src/scripts/initial.sh"]
     # command: /bin/sh -c /opt/src/scripts/initial.sh
     ports:
       - "${APP_PORT}:80"
