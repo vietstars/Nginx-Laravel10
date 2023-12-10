@@ -1,3 +1,4 @@
+import './constant'
 import './bootstrap';
 
-import './App.jsx';
+import './application.jsx';

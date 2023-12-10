@@ -82,6 +82,15 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'notification' => [
+            'driver' => 'slack',
+            'url' => env('NOTIFY_SLACK_WEBHOOK_URL'),
+            'username' => 'Notification from user',
+            'emoji' => ':boom:',
+            'level' => env('LOG_LEVEL', 'critical'),
+            'replace_placeholders' => true,
+        ],
+
         'papertrail' => [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
