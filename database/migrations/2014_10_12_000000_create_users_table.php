@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('password');
             $table->rememberToken();
             $table->dateTime('last_login')->nullable();
+            $table->text('google2fa_secret')->nullable();
             $table->boolean('active')->default(true);
             $table->integer('version')->default(1);
             $table->integer('system')->default(1);

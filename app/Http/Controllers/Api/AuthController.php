@@ -44,11 +44,11 @@ class AuthController extends Controller
             // $request->user()->currentAccessToken()->delete();
             // Revoke a specific token
             // $user->tokens()->where('id', $id)->delete();
+            $user->id = md5($user->id);
+            $user->token = $tokenResult;
 
             return response()->json([
-              'status_code' => 200,
-              'access_token' => $tokenResult,
-              'token_type' => 'Bearer',
+              '_auth' => $user,
             ]);
         } catch (\Exception $error) {
             return response()->json([

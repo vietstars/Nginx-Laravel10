@@ -414,7 +414,7 @@
     ]
   },
   "resources/css/app.scss": {
-    "file": "assets/app-OfReYUWF.css",
+    "file": "assets/app-G_6mjMZJ.css",
     "isEntry": true,
     "src": "resources/css/app.scss"
   },
@@ -447,9 +447,9 @@
       "assets/dark-login-kYYIN10N.jpg"
     ],
     "css": [
-      "assets/app-OfReYUWF.css"
+      "assets/app-G_6mjMZJ.css"
     ],
-    "file": "assets/app-h6V_wPIC.js",
+    "file": "assets/app-KpndXtq4.js",
     "imports": [
       "_react-uhFzv17e.js",
       "_react-dom-QPNHuZrH.js",

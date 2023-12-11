@@ -17,7 +17,7 @@ http.interceptors.request.use(function (config) {
 const API = {
   getLanguageUrl: 'lg',
   changeLanguageUrl: 'change-lg',
-  signInUrl: 'signin'
+  signInUrl: 'sign-in'
 }
 
 export {

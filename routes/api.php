@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/take-auth', [AuthController::class, 'setAuth']);
+Route::post('/sign-in', [AuthController::class, 'setAuth']);
 Route::get('/lg', [LanguageController::class, 'list']);
 Route::post('/change-lg/{lg?}', [LanguageController::class, 'change']);
 

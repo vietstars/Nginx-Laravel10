@@ -27,7 +27,8 @@ settings.json
 .DS_Store
 *.dev.js
 *.lock
+/storage/framework/cache/*
+/public/build/assets/*
+/database/migrations/2014_10_12_000000_create_users_table.php
 /storage/framework/cache/data/36/ce/36cee48aae828dba62b3dab771abcdd210e9ce5d
-/storage/framework/cache/data/52/ac/52acebe9de48b9434598fa65d2ec8d0e111e90b0
-/storage/framework/cache/data/70/d5/70d5789fb8fa04f157e2f175d8e9158bc3d2b5c6
-/public/build/assets/classnames-AtT6GPTx.js
+/storage/framework/cache/data/ae/b0/aeb09c41d12870ff961bc5eb08040ae649f050bd

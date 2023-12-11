@@ -50,37 +50,30 @@ const ResourceProvider = ({ children }) => {
     loadingLang();
   }, []);
 
-  const handleSignIn = () => {
-    // try {
-    //   const auth = await http.post(API.signInUrl, checking)
-    //     .then((resp) => {
-    //       const { _auth } = resp.data
-    //       console.log('_auth: ', _auth.email)
-    //       return _auth
-    //     })
-    //     .catch(function(err) { 
-    //       console.log('err: ', err)
-    //       alert(`err: ${resources._lg.message.login_not_found}`)
-    //     })
-    //     .finally(function() {
-    //       // console.log('finally')
-    //     });
+  const handleSignIn = async (checking) => {
+    try {
+      const { _auth } = await http.post(API.signInUrl, checking)
+        .then((resp) => {
+          return resp.data;
+        })
+        .catch(function(err) { 
+          console.log('err: ', err)
+        })
+        .finally(function() {
+          // console.log('finally')
+        });
 
-    //   if (!auth) {
-    //     return false
-    //   }
+      if ( !_auth.token ) {
+        return false
+      }
 
-    //   setResources({
-    //     _auth: auth,
-    //     _mode: resources._mode,
-    //     _lg: resources._lg,
-    //     _loaded: resources._loaded,
-    //   });
-
-    //   NativeModules.DevSettings.reload();
-    // } catch (err) {
-    //   console.log('handleSignin-error: ', err)
-    // }
+      setResources({
+        ...resources,
+        _auth
+      });
+    } catch (err) {
+      console.log('handleSignin-error: ', err)
+    }
   }
 
   const handleSignUp = () => {

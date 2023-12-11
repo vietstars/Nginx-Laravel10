@@ -28,6 +28,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google2fa_secret',
     ];
 
     /**
@@ -39,6 +40,10 @@ class User extends Authenticatable
         'password',
         'remember_token',
         'deleted_at',
+        'google2fa_secret',
+        'email_verified_at',
+        'active',
+        'system'
     ];
 
     /**
@@ -52,4 +57,14 @@ class User extends Authenticatable
         'last_login' => 'datetime',
         'is_active' => 'boolean',
     ];
+
+    public function setGoogle2faSecretAttribute($value)
+    {
+        $this->attributes['google2fa_secret'] = encrypt($value);
+    }
+
+    public function getGoogle2faSecretAttribute($value)
+    {
+        return decrypt($value);
+    }
 }

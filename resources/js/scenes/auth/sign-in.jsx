@@ -29,9 +29,16 @@ import {
 } from '@context/useResource'
 
 export const SignIn = () => {
-  const { _lg, _locales, _mode, _common } = useResource();
+  const { _lg, _locales, _mode, _common, handleSignIn } = useResource();
   if ( !_locales?.current ) { return null; }
   const { signIn } = _lg;
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+
+  const login = () => {
+    const check = { email, password };
+    handleSignIn(check);
+  }
 
   return(
     <section 
@@ -51,7 +58,7 @@ export const SignIn = () => {
         className="w-full lg:w-7/12 mt-3 md:mt-12"
         >
         <div 
-          className="flex justify-center items-center mb-4"
+          className="flex justify-center items-center"
           >
           <Typography
             as="a"
@@ -68,14 +75,18 @@ export const SignIn = () => {
             variant="h2" 
             className="font-bold"
             >
-            { signIn.sign_in_title }
+            { signIn.title }
           </Typography>
+        </div>
+        <div 
+          className="flex justify-center items-center mb-4"
+          >
           <Typography 
             variant="paragraph" 
             color="blue-gray dark:white" 
             className="text-lg font-normal"
             >
-            { signIn.sign_in_description }
+            { signIn.description }
           </Typography>
         </div>
         <form 
@@ -96,6 +107,8 @@ export const SignIn = () => {
                   border focus:border-2 border-t-transparent focus:border-t-transparent 
                   text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
                 placeholder=""
+                value={ email }
+                onChange={ e => setEmail(e.target.value) }
               />
               <label
                 class="
@@ -118,7 +131,7 @@ export const SignIn = () => {
                   text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 
                   after:border-blue-gray-200 peer-focus:after:!border-gray-900"
                 >
-                { signIn.user_name }
+                { signIn.email }
               </label>
             </div>
             <div class="relative w-full min-w-[200px] h-10">
@@ -134,6 +147,8 @@ export const SignIn = () => {
                   text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
                 placeholder=""
                 type="password"
+                value={ password }
+                onChange={ e => setPassword(e.target.value) }
               />
               <label
                 class="
@@ -162,6 +177,9 @@ export const SignIn = () => {
           </div>
           <Checkbox
             color={ _mode === "light" ? "black" : "white" }
+            className="h-5 w-5 rounded-full border-gray-900/20 bg-gray-900/10 dark:border-white/20 dark:bg-white/10
+              transition-all hover:scale-105 hover:before:opacity-0"
+            containerProps={{ className: "-ml-2.5" }}
             label={
               <Typography
                 variant="small"
@@ -177,12 +195,12 @@ export const SignIn = () => {
                 </a>
               </Typography>
             }
-            containerProps={{ className: "-ml-2.5" }}
           />
           <Button 
             color={ _mode === "light" ? "black" : "white" }
             className="mt-3" 
             fullWidth
+            onClick={ login }
             >
             { signIn.signin_btn }
           </Button>
@@ -190,6 +208,10 @@ export const SignIn = () => {
           <div className="flex flex-col md:flex-row items-center justify-start md:justify-between gap-2 mt-3">
             <Checkbox
               color={ _mode === "light" ? "black" : "white" }
+              containerProps={{ className: "-ml-2.5" }}
+              className="h-5 w-5 rounded-full border-gray-900/20 bg-gray-900/10 dark:border-white/20 dark:bg-white/10
+                transition-all hover:scale-105 hover:before:opacity-0"
+              defaultChecked
               label={
                 <Typography
                   variant="small"
@@ -199,7 +221,6 @@ export const SignIn = () => {
                   { signIn.subscribe_newsletter }
                 </Typography>
               }
-              containerProps={{ className: "-ml-2.5" }}
             />
             <Typography 
               variant="small" 
