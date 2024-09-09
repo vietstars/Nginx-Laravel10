@@ -34,6 +34,6 @@ php artisan clear-compiled
 
 php artisan config:cache
 
-php artisan dump-autoload
+composer dump-autoload
 
 ------------
