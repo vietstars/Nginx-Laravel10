@@ -37,3 +37,37 @@ php artisan config:cache
 composer dump-autoload
 
 ------------
+
+AdvancedNewFile
+
+AutoFileName
+
+Bootstrap 4 Snippets
+
+BracketHighlighter
+
+Color Highlighter
+
+EditorConfig
+
+Eloquent Snippets
+
+Emmet
+
+Laravel 11 Snippets
+
+Laravel Blade AutoComplete
+
+Laravel Blade Highlighter
+
+Laravel helper Completions
+
+PHPsnippets
+
+SidebarEnhancements
+
+SublimeLinter
+
+SublimeLinter-php
+
+SublimeLinter-phpcs
